@@ -159,23 +159,20 @@
   </div>
 </aside>
 
-<!-- JavaScript for collapsible menu -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const techToggles = document.querySelectorAll('.tech-toggle');
-  
   function checkAndOpenMenu() {
     const currentPath = window.location.pathname;
     const categoryMatch = currentPath.match(/\/categories\/([^\/]+)/);
-    
+
     if (categoryMatch) {
       const currentCategory = categoryMatch[1];
       const techCategories = ['python', 'django', 'nodejs', 'articles', 'database'];
-      
+
       if (techCategories.includes(currentCategory)) {
         const articlesSubmenu = document.getElementById('submenu-articles');
         const articlesChevron = document.querySelector('[data-menu="articles"] .chevron');
-        
+
         if (articlesSubmenu && articlesChevron) {
           articlesSubmenu.classList.add('show');
           articlesChevron.style.transform = 'rotate(180deg)';
@@ -183,40 +180,43 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   }
-  
-  techToggles.forEach(function(toggle) {
-    toggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const menuId = this.dataset.menu;
-      const submenu = document.getElementById('submenu-' + menuId);
-      const chevron = this.querySelector('.chevron');
-      
-      if (submenu.classList.contains('show')) {
-        submenu.classList.remove('show');
-        chevron.style.transform = 'rotate(0deg)';
-      } else {
-        // Close other submenus
-        document.querySelectorAll('.tech-submenu.show').forEach(function(otherSubmenu) {
-          otherSubmenu.classList.remove('show');
-        });
-        document.querySelectorAll('.chevron').forEach(function(otherChevron) {
-          otherChevron.style.transform = 'rotate(0deg)';
-        });
-        
-        // Open current submenu
-        submenu.classList.add('show');
-        chevron.style.transform = 'rotate(180deg)';
-      }
-    });
+
+  // 이벤트 위임으로 클릭 이벤트 관리
+  document.addEventListener('click', function(e) {
+    const toggle = e.target.closest('.tech-toggle');
+    if (!toggle) return;
+
+    e.preventDefault();
+
+    const menuId = toggle.dataset.menu;
+    const submenu = document.getElementById('submenu-' + menuId);
+    const chevron = toggle.querySelector('.chevron');
+
+    if (submenu.classList.contains('show')) {
+      submenu.classList.remove('show');
+      chevron.style.transform = 'rotate(0deg)';
+    } else {
+      // 다른 서브메뉴 닫기
+      document.querySelectorAll('.tech-submenu.show').forEach(function(otherSubmenu) {
+        otherSubmenu.classList.remove('show');
+      });
+      document.querySelectorAll('.chevron').forEach(function(otherChevron) {
+        otherChevron.style.transform = 'rotate(0deg)';
+      });
+
+      // 현재 서브메뉴 열기
+      submenu.classList.add('show');
+      chevron.style.transform = 'rotate(180deg)';
+    }
   });
-  
+
+  // 서브메뉴 아이템 클릭 시 이벤트 버블링 막기
   document.querySelectorAll('.submenu-item').forEach(function(submenuItem) {
     submenuItem.addEventListener('click', function(e) {
       e.stopPropagation();
     });
   });
-  
+
   checkAndOpenMenu();
 });
 </script>
