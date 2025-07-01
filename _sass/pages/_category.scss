@@ -1,0 +1,251 @@
+/* Category Page Styles */
+.category-header {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.08),
+    rgba(139, 92, 246, 0.08),
+    rgba(236, 72, 153, 0.08)
+  );
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 20px 40px rgba(99, 102, 241, 0.12),
+    0 8px 16px rgba(139, 92, 246, 0.08),
+    0 0 0 1px rgba(99, 102, 241, 0.1);
+}
+
+.category-icon {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  padding: 1rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.category-title {
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  background: linear-gradient(135deg, #1e293b, #475569);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.category-description {
+  background: rgba(248, 250, 252, 0.9) !important;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  margin: 0;
+  backdrop-filter: blur(5px);
+}
+
+.category-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px !important;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.02),
+    rgba(139, 92, 246, 0.02),
+    rgba(236, 72, 153, 0.02)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.category-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(99, 102, 241, 0.15),
+    0 10px 20px rgba(139, 92, 246, 0.1),
+    0 0 0 1px rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.category-card:hover::before {
+  transform: scaleX(1);
+}
+
+.category-card:hover::after {
+  opacity: 1;
+}
+
+.category-card .card-title {
+  font-weight: 600;
+  font-size: 1.15rem;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #1e293b, #475569);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.category-card:hover .card-title {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  transform: translateY(-2px);
+}
+
+.category-card .post-date {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+}
+
+.category-card .badge {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.6rem;
+  background: linear-gradient(135deg, #6b7280, #4b5563) !important;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(107, 114, 128, 0.2);
+}
+
+.category-card .read-more {
+  opacity: 0;
+  transform: translateX(-15px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+  position: relative;
+}
+
+.category-card:hover .read-more {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Dark mode adjustments for category pages */
+[data-mode='dark'] .category-header {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.1),
+    rgba(139, 92, 246, 0.1),
+    rgba(236, 72, 153, 0.1)
+  );
+  background-color: rgba(15, 23, 42, 0.8);
+  box-shadow: 
+    0 20px 40px rgba(99, 102, 241, 0.18),
+    0 8px 16px rgba(139, 92, 246, 0.12),
+    0 0 0 1px rgba(99, 102, 241, 0.15);
+}
+
+[data-mode='dark'] .category-title {
+  background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-mode='dark'] .category-description {
+  background: rgba(15, 23, 42, 0.9) !important;
+  border-color: rgba(99, 102, 241, 0.2);
+  color: #cbd5e1;
+}
+
+[data-mode='dark'] .category-card {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border-color: rgba(99, 102, 241, 0.15) !important;
+}
+
+[data-mode='dark'] .category-card .card-title {
+  background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-mode='dark'] .category-card:hover .card-title {
+  background: linear-gradient(135deg, #a5b4fc, #c4b5fd) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+[data-mode='dark'] .category-card .post-date {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+[data-mode='dark'] .category-card:hover {
+  box-shadow: 
+    0 20px 40px rgba(99, 102, 241, 0.2),
+    0 10px 20px rgba(139, 92, 246, 0.15),
+    0 0 0 1px rgba(99, 102, 241, 0.2);
+}
+
+[data-mode='dark'] .category-card::after {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.05),
+    rgba(139, 92, 246, 0.05),
+    rgba(236, 72, 153, 0.05)
+  );
+}
+
+[data-mode='dark'] .category-card .read-more {
+  background: linear-gradient(135deg, #a5b4fc, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Empty state styles */
+.text-center.py-5 {
+  padding: 4rem 0 !important;
+  background: rgba(248, 250, 252, 0.5);
+  border-radius: 12px;
+  border: 2px dashed rgba(59, 130, 246, 0.2);
+}
+
+[data-mode='dark'] .text-center.py-5 {
+  background: rgba(15, 23, 42, 0.3);
+}

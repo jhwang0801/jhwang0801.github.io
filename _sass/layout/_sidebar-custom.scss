@@ -1,0 +1,147 @@
+/* Custom Sidebar Technology Menu Styles */
+
+/* 기본 사이드바 메뉴 호버 색상 통일 */
+#sidebar ul li.nav-item a.nav-link:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.08),
+    rgba(147, 51, 234, 0.08)
+  ) !important;
+}
+.tech-menu {
+  position: relative;
+  margin: 4px 0;
+}
+
+.tech-toggle {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 12px;
+  padding: 0.75rem 1rem !important;
+  border: 1px solid transparent;
+}
+
+.tech-toggle:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.08),
+    rgba(147, 51, 234, 0.08)
+  );
+}
+
+.chevron {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.75em;
+  margin-left: auto !important;
+  margin-right: 2rem !important;
+  color: rgba(59, 130, 246, 0.8);
+}
+
+.tech-submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  margin: 4px 0 0 0;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.02);
+}
+
+.tech-submenu.show {
+  max-height: 400px;
+  padding: 8px 0;
+}
+
+.submenu-item {
+  margin: 2px 8px;
+  position: relative;
+}
+
+.submenu-item .nav-link {
+  padding: 0.6rem 1rem;
+  font-size: 0.85em;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  font-weight: 500;
+}
+
+.submenu-item .nav-link:hover {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.submenu-item .nav-link i {
+  margin-right: 8px;
+  width: 16px;
+  text-align: center;
+}
+
+.badge {
+  font-size: 0.65em;
+  min-width: 1.4em;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 600;
+  padding: 0.2em 0.5em;
+  background: #3b82f6 !important;
+  color: white !important;
+}
+
+.badge.bg-primary {
+  background: #f59e0b !important;
+}
+
+.badge.bg-info {
+  background: #10b981 !important;
+}
+
+/* Dark mode adjustments */
+
+[data-mode='dark'] .tech-submenu {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+[data-mode='dark'] .submenu-item .nav-link:hover {
+  background: rgba(59, 130, 246, 0.15);
+}
+
+/* Light mode adjustments */
+[data-mode='light'] .tech-submenu {
+  background: rgba(248, 250, 252, 0.6);
+}
+
+[data-mode='light'] .submenu-item .nav-link:hover {
+  background: rgba(59, 130, 246, 0.06);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tech-submenu.show {
+    max-height: 200px;
+  }
+
+  .submenu-item {
+    padding-left: 1.5rem;
+  }
+}
+
+
+/* Active state for current page */
+.submenu-item .nav-link.active {
+  background: rgba(59, 130, 246, 0.12);
+  font-weight: 600;
+}
+
+
+/* Badge color variations */
+.bg-secondary {
+  background: #6b7280 !important;
+}
+
+.bg-primary {
+  background: #f59e0b !important;
+}
+
+.bg-info {
+  background: #10b981 !important;
+}

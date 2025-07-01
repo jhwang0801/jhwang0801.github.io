@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+{% include lang.html %}
+
+<div id="about-page">
+  <!-- Hero Section -->
+  <div class="hero-section text-center mb-5">
+    <div class="avatar-container mb-4">
+      {% if site.avatar %}
+      <img
+        src="{{ site.avatar }}"
+        alt="Profile"
+        class="profile-avatar rounded-circle"
+      />
+      {% endif %}
+    </div>
+    <h1 class="display-4 mb-3">{{ site.title }}</h1>
+    <p class="lead text-muted mb-4">{{ site.tagline }}</p>
+    <div class="hero-description">
+      <p class="fs-5">Backend Developer @ TOKTOKHAN-DEV</p>
+    </div>
+  </div>
+
+  <!-- Recent Posts Section -->
+  <div class="recent-posts-section mt-5">
+    <h3 class="section-title mb-4">
+      <i class="fas fa-clock me-2 text-info"></i>Recent Posts
+    </h3>
+    <div class="row g-3">
+      {% for post in site.posts limit: 3 %}
+      <div class="col-md-4">
+        <div class="recent-post-card card border-0 shadow-sm h-100">
+          <div class="card-body p-3">
+            <h6 class="card-title">
+              <a
+                href="{{ post.url | relative_url }}"
+                class="text-decoration-none"
+                >{{ post.title }}</a
+              >
+            </h6>
+            <small class="text-muted">
+              {% include datetime.html date=post.date lang=lang %}
+            </small>
+            {% if post.categories.size > 0 %}
+            <div class="mt-2">
+              {% for category in post.categories limit: 2 %}
+              <span class="badge bg-light text-dark">{{ category }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

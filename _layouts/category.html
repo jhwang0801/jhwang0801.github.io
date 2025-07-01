@@ -1,0 +1,120 @@
+---
+layout: page
+# The Category layout
+---
+
+{% include lang.html %}
+
+<div id="page-category">
+  <!-- Category Header with Modern Design -->
+  <div class="category-header mb-4">
+    <div class="d-flex align-items-center mb-3">
+      <div class="category-icon me-3 flex-shrink-0">
+        {% if page.title == 'python' %}
+        <i class="fab fa-python fa-xl text-primary"></i>
+        {% elsif page.title == 'django' %}
+        <i class="fas fa-server fa-xl text-success"></i>
+        {% elsif page.title == 'nodejs' %}
+        <i class="fab fa-node-js fa-xl text-warning"></i>
+        {% elsif page.title == 'database' %}
+        <i class="fas fa-database fa-xl text-warning"></i>
+        {% else %}
+        <i class="far fa-folder-open fa-xl text-muted"></i>
+        {% endif %}
+      </div>
+      <div class="flex-grow-1">
+        <h1 class="mb-1 category-title">{{ page.title | capitalize }}</h1>
+        <p class="text-muted mb-0">
+          <i class="fas fa-archive fa-fw me-1"></i>
+          {{ page.posts | size }} posts available
+        </p>
+      </div>
+    </div>
+
+    <!-- Category Description -->
+    <div class="category-description p-3 rounded bg-light">
+      {% if page.title == 'python' %}
+      <p class="mb-0">
+        <i class="fas fa-info-circle me-2"></i>Python 프로그래밍 언어에 관한
+        글들을 모아두었습니다.
+      </p>
+      {% elsif page.title == 'django' %}
+      <p class="mb-0">
+        <i class="fas fa-info-circle me-2"></i>Django 웹 프레임워크에 관한 개발
+        경험과 팁들을 공유합니다.
+      </p>
+      {% elsif page.title == 'database' %}
+      <p class="mb-0">
+        <i class="fas fa-info-circle me-2"></i>Database (주로 postgreSQL) 관련된
+        경험과 내용들을 다룹니다.
+      </p>
+      {% elsif page.title == 'nodejs' %}
+      <p class="mb-0">
+        <i class="fas fa-info-circle me-2"></i>Node.js 서버 개발과 관련된
+        내용들을 다룹니다.
+      </p>
+      {% else %}
+      <p class="mb-0">
+        <i class="fas fa-info-circle me-2"></i>{{ page.title }} 카테고리의
+        글들을 모아두었습니다.
+      </p>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Post Cards Grid -->
+  <div id="category-post-list" class="row g-4">
+    {% for post in page.posts %}
+    <div class="col-12">
+      <article class="category-card card border-0 shadow-sm h-100">
+        <a href="{{ post.url | relative_url }}" class="text-decoration-none">
+          <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <h3 class="card-title h5 mb-0 text-dark">{{ post.title }}</h3>
+              <div class="post-date">
+                <i class="far fa-calendar-alt fa-fw text-muted me-1"></i>
+                <small class="text-muted">
+                  {% include datetime.html date=post.date lang=lang %}
+                </small>
+              </div>
+            </div>
+
+            {% if post.description %}
+            <p class="card-text text-muted mb-3">
+              {{ post.description | truncate: 120 }}
+            </p>
+            {% else %}
+            <p class="card-text text-muted mb-3">
+              {{ post.content | strip_html | truncate: 120 }}
+            </p>
+            {% endif %}
+
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="post-tags">
+                {% if post.tags.size > 0 %} {% for tag in post.tags limit: 3 %}
+                <span class="badge bg-secondary me-1 mb-1">#{{ tag }}</span>
+                {% endfor %} {% endif %}
+              </div>
+              <div class="read-more">
+                <span class="text-primary">
+                  Read more <i class="fas fa-arrow-right fa-sm"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if page.posts.size == 0 %}
+  <div class="text-center py-5">
+    <i class="fas fa-folder-open fa-3x text-muted mb-3"></i>
+    <h3 class="text-muted">아직 포스트가 없습니다</h3>
+    <p class="text-muted">
+      {{ page.title }} 카테고리에 첫 번째 글을 작성해보세요!
+    </p>
+  </div>
+  {% endif %}
+</div>

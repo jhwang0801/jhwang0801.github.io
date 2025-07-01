@@ -1,0 +1,222 @@
+<!-- The Side Bar -->
+
+<aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+  <header class="profile-wrapper">
+    <a href="{{ '/' | relative_url }}" id="avatar" class="rounded-circle">
+      {%- if site.avatar != empty and site.avatar -%}
+        {%- capture avatar_url -%}
+          {% include media-url.html src=site.avatar %}
+        {%- endcapture -%}
+        <img src="{{- avatar_url -}}" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+      {%- endif -%}
+    </a>
+
+    <a class="site-title d-block" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <div class="d-flex align-items-baseline">
+      <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
+      <!-- GitHub 링크 -->
+      {% for entry in site.data.contact %}
+        {% if entry.type == 'github' %}
+          <a href="https://github.com/{{ site.github.username }}" target="_blank" rel="noopener noreferrer" class="ms-2 text-decoration-none d-flex align-items-center" aria-label="GitHub">
+            <i class="{{ entry.icon }} fa-sm" style="opacity: 0.8; line-height: 1;"></i>
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </header>
+  <!-- .profile-wrapper -->
+
+  <nav class="flex-column flex-grow-1 w-100 ps-0">
+    <ul class="nav">
+      <!-- home -->
+      <li class="nav-item{% if page.layout == 'home' %}{{ " active" }}{% endif %}">
+        <a href="{{ '/' | relative_url }}" class="nav-link">
+          <i class="fa-fw fas fa-home"></i>
+          <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
+        </a>
+      </li>
+
+      <!-- Custom Technology Menu -->
+      {% assign nav = site.data.navigation %}
+      {% for menu_item in nav.menu %}
+        {% assign total_posts = 0 %}
+        {% for category in menu_item.categories %}
+          {% assign posts_in_category = site.categories[category] | size %}
+          {% assign total_posts = total_posts | plus: posts_in_category %}
+        {% endfor %}
+        
+        {% for subcategory in menu_item.subcategories %}
+          {% assign sub_posts = site.categories[subcategory.category] | size %}
+          {% assign total_posts = total_posts | plus: sub_posts %}
+        {% endfor %}
+
+        <li class="nav-item tech-menu">
+          <a href="#" class="nav-link tech-toggle" data-menu="{{ menu_item.title | downcase }}">
+            <i class="fa-fw {{ menu_item.icon }}"></i>
+            <span>{{ menu_item.title | upcase }}</span>
+            {% if total_posts > 0 %}
+              <span class="badge badge-pill bg-secondary ms-3">{{ total_posts }}</span>
+            {% endif %}
+            <i class="fas fa-chevron-down chevron"></i>
+          </a>
+          
+          <div class="tech-submenu collapse" id="submenu-{{ menu_item.title | downcase }}">
+            {% for subcategory in menu_item.subcategories %}
+              {% assign sub_posts_count = site.categories[subcategory.category] | size %}
+              <div class="nav-item submenu-item">
+                <a href="{{ site.baseurl }}/categories/{{ subcategory.category | slugify }}/" class="nav-link">
+                  {% if subcategory.icon %}
+                    <i class="fa-fw {{ subcategory.icon }}"></i>
+                  {% endif %}
+                  <span>{{ subcategory.name }}</span>
+                  {% if sub_posts_count > 0 %}
+                    <span class="badge badge-pill bg-primary ms-auto">{{ sub_posts_count }}</span>
+                  {% endif %}
+                </a>
+              </div>
+            {% endfor %}
+            
+            <!-- Main category link -->
+            {% for category in menu_item.categories %}
+              {% assign main_posts = site.categories[category] | size %}
+              {% if main_posts > 0 %}
+                <div class="nav-item submenu-item">
+                  <a href="{{ site.baseurl }}/categories/{{ category | slugify }}/" class="nav-link">
+                    <span>All {{ menu_item.title }}</span>
+                    <span class="badge badge-pill bg-info ms-auto">{{ main_posts }}</span>
+                  </a>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </li>
+      {% endfor %}
+
+      <!-- Default tabs -->
+      {% for tab_item in nav.default_tabs %}
+        {% unless tab_item.name == "Home" %}
+          {% assign tab_url = tab_item.url %}
+          {% assign is_active = false %}
+          {% if page.url == tab_url %}
+            {% assign is_active = true %}
+          {% endif %}
+          
+          <li class="nav-item{% if is_active %}{{ " active" }}{% endif %}">
+            <a href="{{ tab_url | relative_url }}" class="nav-link">
+              <i class="fa-fw {{ tab_item.icon }}"></i>
+              <span>{{ tab_item.name | upcase }}</span>
+            </a>
+          </li>
+        {% endunless %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
+    <!-- 다른 소셜 링크들만 유지 (GitHub 제외) -->
+    {% for entry in site.data.contact %}
+        {% unless entry.type == 'github' %}
+          {% case entry.type %}
+            {% when 'twitter' %}
+              {%- capture url -%}
+                https://{{ entry.type }}.com/{{ site[entry.type].username }}
+              {%- endcapture -%}
+            {% when 'email' %}
+              {% assign email = site.social.email | split: '@' %}
+              {%- capture url -%}
+                javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
+              {%- endcapture -%}
+            {% when 'rss' %}
+              {% assign url = '/feed.xml' | relative_url %}
+            {% else %}
+              {% assign url = entry.url %}
+          {% endcase %}
+    
+          {% if url %}
+            <a
+              href="{{ url }}"
+              aria-label="{{ entry.type }}"
+              {% assign link_types = '' %}
+    
+              {% unless entry.noblank %}
+                target="_blank"
+                {% assign link_types = 'noopener noreferrer' %}
+              {% endunless %}
+    
+              {% if entry.type == 'mastodon' %}
+                {% assign link_types = link_types | append: ' me' | strip %}
+              {% endif %}
+    
+              {% unless link_types == empty %}
+                rel="{{ link_types }}"
+              {% endunless %}
+            >
+              <i class="{{ entry.icon }}"></i>
+            </a>
+          {% endif %}
+        {% endunless %}
+      {% endfor %}
+  </div>
+</aside>
+
+<!-- JavaScript for collapsible menu -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const techToggles = document.querySelectorAll('.tech-toggle');
+  
+  function checkAndOpenMenu() {
+    const currentPath = window.location.pathname;
+    const categoryMatch = currentPath.match(/\/categories\/([^\/]+)/);
+    
+    if (categoryMatch) {
+      const currentCategory = categoryMatch[1];
+      const techCategories = ['python', 'django', 'nodejs', 'articles', 'database'];
+      
+      if (techCategories.includes(currentCategory)) {
+        const articlesSubmenu = document.getElementById('submenu-articles');
+        const articlesChevron = document.querySelector('[data-menu="articles"] .chevron');
+        
+        if (articlesSubmenu && articlesChevron) {
+          articlesSubmenu.classList.add('show');
+          articlesChevron.style.transform = 'rotate(180deg)';
+        }
+      }
+    }
+  }
+  
+  techToggles.forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const menuId = this.dataset.menu;
+      const submenu = document.getElementById('submenu-' + menuId);
+      const chevron = this.querySelector('.chevron');
+      
+      if (submenu.classList.contains('show')) {
+        submenu.classList.remove('show');
+        chevron.style.transform = 'rotate(0deg)';
+      } else {
+        // Close other submenus
+        document.querySelectorAll('.tech-submenu.show').forEach(function(otherSubmenu) {
+          otherSubmenu.classList.remove('show');
+        });
+        document.querySelectorAll('.chevron').forEach(function(otherChevron) {
+          otherChevron.style.transform = 'rotate(0deg)';
+        });
+        
+        // Open current submenu
+        submenu.classList.add('show');
+        chevron.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+  
+  document.querySelectorAll('.submenu-item').forEach(function(submenuItem) {
+    submenuItem.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  });
+  
+  checkAndOpenMenu();
+});
+</script>

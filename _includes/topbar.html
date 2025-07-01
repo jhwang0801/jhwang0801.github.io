@@ -1,0 +1,51 @@
+<!-- The Top Bar -->
+
+<header id="topbar-wrapper" class="flex-shrink-0" aria-label="Top Bar">
+  <div
+    id="topbar"
+    class="d-flex align-items-center justify-content-center px-lg-3 h-100"
+  >
+    <button
+      type="button"
+      id="sidebar-trigger"
+      class="btn btn-link position-absolute start-0 ms-3"
+      aria-label="Sidebar"
+    >
+      <i class="fas fa-bars fa-fw"></i>
+    </button>
+
+    <search
+      id="search"
+      class="d-flex align-items-center"
+      style="min-width: 300px; width: 50vw; max-width: 700px"
+    >
+      <i class="fas fa-search fa-fw me-2"></i>
+      <input
+        class="form-control"
+        id="search-input"
+        type="search"
+        aria-label="search"
+        autocomplete="off"
+        placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."
+        style="width: 100%"
+      />
+    </search>
+
+    <button
+      type="button"
+      id="search-trigger"
+      class="btn btn-link position-absolute end-0 me-5"
+      aria-label="Search"
+    >
+      <i class="fas fa-search fa-fw"></i>
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-link text-decoration-none position-absolute end-0 me-3"
+      id="search-cancel"
+    >
+      {{- site.data.locales[include.lang].search.cancel -}}
+    </button>
+  </div>
+</header>

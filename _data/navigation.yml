@@ -1,0 +1,25 @@
+menu:
+  - title: "Articles"
+    icon: "fas fa-blog"
+    categories: ["article"]
+    subcategories:
+      - name: "Python"
+        category: "python"
+        icon: "fab fa-python"
+      - name: "Django"
+        category: "django"
+        icon: "fas fa-server"
+      - name: "Database"
+        category: "database"
+        icon: "fas fa-database"
+      # - name: "Node.js"
+      #   category: "nodejs"
+      #   icon: "fab fa-node-js"
+
+default_tabs:
+  - name: "Home"
+    url: "/"
+    icon: "fas fa-home"
+  - name: "Portfolio"
+    url: "/portfolio/"
+    icon: "fas fa-briefcase"
