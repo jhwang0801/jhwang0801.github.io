@@ -22,8 +22,8 @@
   margin-right: 0.5rem !important;
 }
 
-/* Bootstrap Grid Classes */
-.row {
+/* Bootstrap Grid Classes - scoped to about page */
+#about-page .row {
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1 * 0);
@@ -31,7 +31,7 @@
   margin-left: calc(-0.5 * 1.5rem);
 }
 
-.row > * {
+#about-page .row > * {
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
@@ -40,23 +40,23 @@
   margin-top: 0;
 }
 
-.col-md-4 {
+#about-page .col-md-4 {
   flex: 0 0 auto;
   width: 33.33333333%;
 }
 
 @media (max-width: 767.98px) {
-  .col-md-4 {
+  #about-page .col-md-4 {
     width: 100%;
   }
 }
 
-.g-3 {
+#about-page .g-3 {
   --bs-gutter-x: 1rem;
   --bs-gutter-y: 1rem;
 }
 
-.g-3 > * {
+#about-page .g-3 > * {
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
