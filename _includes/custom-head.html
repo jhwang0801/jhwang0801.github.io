@@ -7,3 +7,13 @@
     background-repeat: no-repeat !important;
   }
 </style>
+
+<!-- Sidebar menu JavaScript - load at end of body -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Load sidebar menu script
+    var script = document.createElement('script');
+    script.src = '{{ "/assets/js/sidebar-menu.js" | relative_url }}';
+    document.body.appendChild(script);
+  });
+</script>
