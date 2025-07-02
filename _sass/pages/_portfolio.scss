@@ -1,5 +1,21 @@
 /* Portfolio Page Styles */
 
+/* Bootstrap Typography Classes */
+.display-4 {
+  font-weight: 300 !important;
+  line-height: 1.2 !important;
+  font-size: calc(1.475rem + 2.7vw) !important;
+  
+  @media (min-width: 1200px) {
+    font-size: 3.5rem !important;
+  }
+}
+
+.lead {
+  font-size: 1.25rem !important;
+  font-weight: 300 !important;
+}
+
 .portfolio-container {
   max-width: 1200px;
   margin: 0 auto;
