@@ -3,7 +3,26 @@
 
 @import 'main';
 
-/* Custom Portfolio Styles */
+/* Custom Page Styles */
 @import 'pages/portfolio';
+@import 'pages/about';
+@import 'pages/home';
+@import 'pages/post';
+@import 'pages/categories';
+@import 'pages/category';
+@import 'pages/tags';
+@import 'pages/archives';
+@import 'pages/search';
+@import 'pages/category-tag';
+
+/* Custom Component Styles */
 @import 'components/cards';
+@import 'components/buttons';
+@import 'components/popups';
+
+/* Custom Layout Styles */
 @import 'layout/sidebar-custom';
+@import 'layout/sidebar';
+@import 'layout/topbar';
+@import 'layout/footer';
+@import 'layout/panel';
