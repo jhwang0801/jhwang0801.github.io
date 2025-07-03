@@ -48,6 +48,22 @@ layout: default
           >
             <i class="fab fa-github me-1"></i>View Code
           </a>
+          {% endif %} {% if page.pypi_url %}
+          <a
+            href="{{ page.pypi_url }}"
+            target="_blank"
+            class="btn btn-outline-dark"
+          >
+            <i class="fa-solid fa-copyright me-1"></i>Visit PyPI
+          </a>
+          {% endif %} {% if page.docs_url %}
+          <a
+            href="{{ page.docs_url }}"
+            target="_blank"
+            class="btn btn-outline-dark"
+          >
+            <i class="fa-solid fa-file me-1"></i>View DOCS
+          </a>
           {% endif %}
         </div>
       </div>

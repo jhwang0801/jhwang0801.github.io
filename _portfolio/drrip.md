@@ -1,8 +1,8 @@
 ---
 title: "Drrip 패션 커머스 플랫폼"
-tech_stack: ["Django", "DRF", "PostgreSQL", "Celery", "AWS", "AWS SQS", "Docker", "GitHub Actions"]
+tech_stack: ["Django", "DRF", "PostgreSQL", "Celery", "AWS", "Docker", "GitHub Actions"]
 duration: "2024.09 - 2025.02 (6개월)"
-description: "대규모 멀티벤더 패션 커머스 플랫폼의 백엔드 시스템 설계 및 개발"
+description: "대규모 멀티벤더 커머스 플랫폼 시스템"
 demo_url: "https://drrip.co.kr"
 image: "/assets/img/projects/drrip.webp"
 featured: true
@@ -89,7 +89,6 @@ PurchaseOrder (주문서)          # 고객 결제 단위
 #### **S3 Pre-signed URL 기반 안전한 다운로드**
 - **단기 접근 제어**: 5분 만료 시간으로 URL 노출 위험 최소화
 - **권한 기반 생성**: 역할별 문서 접근 권한 검증 후 URL 생성
-- **일회성 다운로드**: 다운로드 완료 후 URL 자동 무효화
 
 ---
 
