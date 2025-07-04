@@ -22,6 +22,14 @@
           </a>
         {% endif %}
       {% endfor %}
+      <!-- Email 링크 -->
+      {% for entry in site.data.contact %}
+        {% if entry.type == 'email' %}
+          <a href="mailto:{{ site.social.email }}" class="ms-2 text-decoration-none d-flex align-items-center" aria-label="Email">
+            <i class="{{ entry.icon }} fa-sm" style="opacity: 0.8; line-height: 1;"></i>
+          </a>
+        {% endif %}
+      {% endfor %}
     </div>
   </header>
   <!-- .profile-wrapper -->
@@ -120,11 +128,6 @@
             {% when 'twitter' %}
               {%- capture url -%}
                 https://{{ entry.type }}.com/{{ site[entry.type].username }}
-              {%- endcapture -%}
-            {% when 'email' %}
-              {% assign email = site.social.email | split: '@' %}
-              {%- capture url -%}
-                javascript:location.href = 'mailto:' + ['{{ email[0] }}','{{ email[1] }}'].join('@')
               {%- endcapture -%}
             {% when 'rss' %}
               {% assign url = '/feed.xml' | relative_url %}

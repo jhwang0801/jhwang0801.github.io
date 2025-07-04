@@ -1,7 +1,7 @@
 ---
 title: "Drrip 패션 커머스 플랫폼"
 tech_stack: ["Django", "DRF", "PostgreSQL", "Celery", "AWS", "Docker", "GitHub Actions"]
-duration: "2024.09 - 2025.02 (6개월)"
+duration: "2024.09 - 2025.02 (5개월)"
 description: "대규모 멀티벤더 커머스 플랫폼 시스템"
 demo_url: "https://drrip.co.kr"
 image: "/assets/img/projects/drrip.webp"

@@ -6,7 +6,7 @@ description: "암호화 검증 기반 NFC 태그 관리 시스템 (초기 단계
 demo_url: "https://www.tagme.my/"
 image: "/assets/img/projects/tagme.png"
 featured: true
-order: 2
+order: 3
 ---
 
 ## 프로젝트 개요

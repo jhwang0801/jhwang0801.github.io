@@ -6,7 +6,7 @@ description: "마이크로 프로모션 사이트"
 demo_url: "https://closeyoureyes.today"
 image: "/assets/img/projects/birthdaycompany.png"
 featured: true
-order: 3
+order: 5
 ---
 
 ## 프로젝트 개요
