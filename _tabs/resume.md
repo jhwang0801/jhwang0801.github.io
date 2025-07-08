@@ -2,6 +2,7 @@
 layout: page
 icon: fas fa-file-alt
 order: 2
+hide_title: true
 ---
 
 <div id="resume-page">
