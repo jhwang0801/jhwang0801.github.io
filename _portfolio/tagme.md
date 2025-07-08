@@ -1,6 +1,6 @@
 ---
 title: "TagMe NFC 스마트 태그 플랫폼"
-tech_stack: ["Django", "DRF", "PostgreSQL", "NFC"]
+tech_stack: ["Django", "DRF", "AWS", "DOCKER", "PostgreSQL", "NFC"]
 duration: "2024.10 - 2024.11 (1개월)"
 description: "암호화 검증 기반 NFC 태그 관리 시스템 (초기 단계)"
 demo_url: "https://www.tagme.my/"

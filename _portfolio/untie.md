@@ -1,6 +1,6 @@
 ---
 title: "Untie(가제) 웹소설 플랫폼"
-tech_stack: ["Django", "DRF", "MySQL", "Celery", "Redis"]
+tech_stack: ["Django", "DRF", "AWS", "MySQL", "Celery", "Redis"]
 duration: "2023.09 - 2024.04 (7개월)"
 description: "웹소설 플랫폼 (밀리의서재, 미출시)"
 image: "/assets/img/projects/untie.jpg"

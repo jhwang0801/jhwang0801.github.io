@@ -3,7 +3,6 @@
 
 @import 'main';
 
-/* Custom Page Styles */
 @import 'pages/portfolio';
 @import 'pages/about';
 @import 'pages/home';
@@ -14,13 +13,10 @@
 @import 'pages/archives';
 @import 'pages/search';
 @import 'pages/category-tag';
-
-/* Custom Component Styles */
+@import 'pages/resume';
 @import 'components/cards';
 @import 'components/buttons';
 @import 'components/popups';
-
-/* Custom Layout Styles */
 @import 'layout/sidebar-custom';
 @import 'layout/sidebar';
 @import 'layout/topbar';
