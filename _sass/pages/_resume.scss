@@ -337,7 +337,7 @@
   white-space: nowrap;
 }
 
-.project-card {
+#resume-page .project-card {
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: 16px;
@@ -347,39 +347,39 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
+#resume-page .project-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
 }
 
-.project-header {
+#resume-page .project-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 1rem;
 }
 
-.project-title {
+#resume-page .project-title {
   font-size: 1.3rem;
   font-weight: 600;
   color: #1e293b;
   margin: 0;
 }
 
-.project-period {
+#resume-page .project-period {
   color: #6b7280;
   font-size: 0.9rem;
   white-space: nowrap;
 }
 
-.project-tech {
+#resume-page .project-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.tech-tag {
+#resume-page .tech-tag {
   background: rgba(59, 130, 246, 0.1);
   color: #3b82f6;
   padding: 0.3rem 0.8rem;
@@ -388,19 +388,19 @@
   font-weight: 500;
 }
 
-.project-description {
+#resume-page .project-description {
   color: #374151;
   line-height: 1.7;
   margin-bottom: 1rem;
 }
 
-.project-achievements {
+#resume-page .project-achievements {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.project-achievements li {
+#resume-page .project-achievements li {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.8rem;
@@ -408,7 +408,7 @@
   line-height: 1.6;
 }
 
-.project-achievements li::before {
+#resume-page .project-achievements li::before {
   content: '▸';
   position: absolute;
   left: 0;
@@ -416,11 +416,11 @@
   font-weight: bold;
 }
 
-.project-achievements li:last-child {
+#resume-page .project-achievements li:last-child {
   margin-bottom: 0;
 }
 
-.project-achievements li strong {
+#resume-page .project-achievements li strong {
   color: #1e293b;
 }
 
@@ -526,7 +526,7 @@
   font-style: italic;
 }
 
-.opensource-card {
+#resume-page .opensource-card {
   background: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(59, 130, 246, 0.1);
   border-radius: 16px;
@@ -535,62 +535,48 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.opensource-card:hover {
+#resume-page .opensource-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
 }
 
-.opensource-header {
+#resume-page .opensource-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.opensource-title {
+#resume-page .opensource-title {
   font-size: 1.3rem;
   font-weight: 600;
   color: #1e293b;
   margin: 0;
 }
 
-.opensource-links {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.opensource-links {
+#resume-page .opensource-links {
   display: flex;
   gap: 0.8rem;
   flex-wrap: wrap;
 }
 
-.opensource-link {
+#resume-page .opensource-link {
   text-decoration: none !important;
   transition: all 0.3s ease;
   border: none !important;
   outline: none !important;
 }
 
-.opensource-link:hover {
+#resume-page .opensource-link:hover,
+#resume-page .opensource-link:focus,
+#resume-page .opensource-link:visited,
+#resume-page .opensource-link:active {
   text-decoration: none !important;
   border: none !important;
   outline: none !important;
 }
 
-.opensource-link:focus {
-  text-decoration: none !important;
-  border: none !important;
-  outline: none !important;
-}
-
-.opensource-link:visited {
-  text-decoration: none !important;
-}
-
-.opensource-link .icon-circle {
+#resume-page .opensource-link .icon-circle {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -603,35 +589,35 @@
   gap: 0.1rem;
 }
 
-.opensource-link i {
+#resume-page .opensource-link i {
   font-size: 1rem;
   color: #3b82f6;
 }
 
-.opensource-link span {
+#resume-page .opensource-link span {
   font-size: 0.6rem;
   color: #6b7280;
   font-weight: 500;
   line-height: 1;
 }
 
-.opensource-link:hover .icon-circle {
+#resume-page .opensource-link:hover .icon-circle {
   border-color: #3b82f6;
   background: #f0f9ff;
   transform: translateY(-2px);
 }
 
-.opensource-link:hover span {
+#resume-page .opensource-link:hover span {
   color: #3b82f6;
 }
 
-.opensource-achievements {
+#resume-page .opensource-achievements {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.opensource-achievements li {
+#resume-page .opensource-achievements li {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.8rem;
@@ -639,7 +625,7 @@
   line-height: 1.6;
 }
 
-.opensource-achievements li::before {
+#resume-page .opensource-achievements li::before {
   content: '▸';
   position: absolute;
   left: 0;
@@ -647,11 +633,11 @@
   font-weight: bold;
 }
 
-.opensource-achievements li:last-child {
+#resume-page .opensource-achievements li:last-child {
   margin-bottom: 0;
 }
 
-.opensource-achievements li strong {
+#resume-page .opensource-achievements li strong {
   color: #1e293b;
 }
 
@@ -727,7 +713,7 @@
 }
 
 [data-mode='dark'] .skill-category,
-[data-mode='dark'] .project-card,
+[data-mode='dark'] #resume-page .project-card,
 [data-mode='dark'] .education-item,
 [data-mode='dark'] .opensource-card {
   background: rgba(15, 23, 42, 0.6);
@@ -735,7 +721,7 @@
 }
 
 [data-mode='dark'] .skill-category h4,
-[data-mode='dark'] .project-title,
+[data-mode='dark'] #resume-page .project-title,
 [data-mode='dark'] .education-item h4,
 [data-mode='dark'] .opensource-title,
 [data-mode='dark'] .company-info h3 {
@@ -743,18 +729,18 @@
 }
 
 [data-mode='dark'] .skill-list,
-[data-mode='dark'] .project-description,
-[data-mode='dark'] .project-achievements li,
+[data-mode='dark'] #resume-page .project-description,
+[data-mode='dark'] #resume-page .project-achievements li,
 [data-mode='dark'] .opensource-achievements li,
 [data-mode='dark'] .company-info p,
 [data-mode='dark'] .company-period,
-[data-mode='dark'] .project-period,
+[data-mode='dark'] #resume-page .project-period,
 [data-mode='dark'] .education-item p {
   color: #9ca3af;
 }
 
 [data-mode='dark'] .opensource-achievements li strong,
-[data-mode='dark'] .project-achievements li strong {
+[data-mode='dark'] #resume-page .project-achievements li strong {
   color: #e2e8f0;
 }
 
@@ -810,7 +796,7 @@
     gap: 0.5rem;
   }
 
-  .project-header {
+  #resume-page .project-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
