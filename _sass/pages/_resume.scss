@@ -159,7 +159,7 @@
 }
 
 .resume-section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .section-title {
@@ -311,6 +311,61 @@
   font-size: 0.8rem;
 }
 
+.leadership-experience {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.leadership-experience h4 {
+  color: #3b82f6;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.leadership-experience h4 .date-text {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.leadership-experience h4 i {
+  color: #3b82f6;
+}
+
+.leadership-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leadership-achievements li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.leadership-achievements li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.leadership-achievements li:last-child {
+  margin-bottom: 0;
+}
+
 .company-header {
   display: flex;
   justify-content: space-between;
@@ -356,7 +411,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 1rem;
+  // margin-bottom: 1rem;
 }
 
 #resume-page .project-title {
@@ -364,6 +419,14 @@
   font-weight: 600;
   color: #1e293b;
   margin: 0;
+}
+
+#resume-page .project-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 0 0 1rem 0;
+  font-style: italic;
 }
 
 #resume-page .project-period {

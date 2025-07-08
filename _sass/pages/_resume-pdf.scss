@@ -1,0 +1,646 @@
+/* PDF Resume Styles - Optimized for A4 printing */
+#resume-pdf-page {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 8mm;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui,
+    sans-serif;
+  font-size: 10pt;
+  line-height: 1.3;
+  color: #000;
+  background: white;
+  box-sizing: border-box;
+  word-break: keep-all;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Print-specific styles */
+@media print {
+  #resume-pdf-page {
+    max-width: none;
+    margin: 0;
+    padding: 8mm;
+    font-size: 9pt;
+    line-height: 1.2;
+    height: auto;
+    min-height: auto;
+  }
+
+  @page {
+    size: A4;
+    margin: 8mm;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide navigation and other elements */
+  #sidebar,
+  .topbar-wrapper,
+  nav,
+  header,
+  #back-to-top {
+    display: none !important;
+  }
+
+  /* Hide panel (trending tags) and footer */
+  #panel-wrapper,
+  #tail-wrapper,
+  footer,
+  .access {
+    display: none !important;
+  }
+
+  /* Hide trending tags more specifically */
+  .trending-tags,
+  #trending-tags,
+  [id*='trending'],
+  [class*='trending'],
+  [id*='tag'],
+  [class*='tag']:not(.pdf-project-card):not(.tech-tag):not(.skill-tag):not(
+      .aws-service-tag
+    ),
+  .panel-heading,
+  .panel-title,
+  .panel-body,
+  .panel,
+  [class*='panel'] {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Nuclear option - hide everything after resume content */
+  #resume-pdf-page ~ * {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide everything in post-content except resume */
+  .post-content > *:not(#resume-pdf-page) {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Force body height to content */
+  body {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  html {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Show only resume content */
+  #resume-pdf-page {
+    display: block !important;
+  }
+}
+
+/* Header Section */
+.pdf-header {
+  display: flex;
+  align-items: center;
+  gap: 10mm;
+  margin-bottom: 6mm;
+  padding-bottom: 2mm;
+}
+
+.pdf-profile-section {
+  flex-shrink: 0;
+}
+
+.pdf-profile-image {
+  width: 20mm;
+  height: 20mm;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1pt solid #ccc;
+}
+
+.pdf-info-section {
+  flex: 1;
+}
+
+.pdf-contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.pdf-info-section h1 {
+  font-size: 20pt;
+  font-weight: 700;
+  margin: 0 0 2mm 0;
+  color: #000;
+}
+
+.pdf-title {
+  font-size: 14pt;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 3mm 0;
+}
+
+.pdf-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+}
+
+.pdf-contact-item {
+  font-size: 9pt;
+  color: #666;
+}
+
+/* Section Styles */
+.pdf-section {
+  margin-bottom: 5mm;
+}
+
+.pdf-section:last-child {
+  margin-bottom: 0;
+}
+
+.pdf-section-title {
+  font-size: 12pt;
+  font-weight: 700;
+  margin: 0 0 2mm 0;
+  padding-bottom: 0.5mm;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.3pt;
+}
+
+.pdf-section-title.with-border {
+  border-bottom: 1pt solid #000;
+}
+
+/* Introduction */
+.pdf-intro-text {
+  margin-bottom: 2mm;
+  text-align: justify;
+  font-size: 9pt;
+  line-height: 1.3;
+  margin-left: 3mm;
+  margin-right: 5mm;
+  word-break: keep-all;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.pdf-intro-text:first-child {
+  margin-top: 5mm;
+}
+
+.pdf-intro-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Skills Grid */
+.pdf-skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm;
+  margin-top: 5mm;
+  margin-left: 3mm;
+  margin-right: 5mm;
+}
+
+.pdf-skill-category {
+  page-break-inside: avoid;
+  margin-bottom: 3mm;
+}
+
+.pdf-skill-category:last-child {
+  margin-bottom: 0;
+}
+
+.pdf-skill-category h4 {
+  font-size: 10pt;
+  font-weight: 700;
+  margin: 0 0 3mm 0;
+  color: #000;
+}
+
+.pdf-skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 3mm;
+  margin-top: 1mm;
+}
+
+.pdf-skill-list li {
+  position: relative;
+  padding-left: 2mm;
+  margin-bottom: 0.5mm;
+  font-size: 8pt;
+  color: #333;
+  font-weight: 500;
+}
+
+.pdf-skill-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: bold;
+}
+
+.pdf-aws-services {
+  margin-top: 2mm;
+  margin-left: 3mm;
+  font-size: 7pt;
+  color: #555;
+  line-height: 1.2;
+}
+
+.pdf-aws-services strong {
+  font-weight: 600;
+  color: #000;
+  display: block;
+  margin-bottom: 0.5mm;
+}
+
+.pdf-aws-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 3mm;
+  margin-top: 0.5mm;
+  columns: 3;
+  column-gap: 3mm;
+}
+
+.pdf-aws-list li {
+  position: relative;
+  padding-left: 2mm;
+  margin-bottom: 0.3mm;
+  font-size: 6pt;
+  color: #666;
+  font-weight: 500;
+  break-inside: avoid;
+}
+
+.pdf-aws-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #999;
+  font-size: 5pt;
+}
+
+/* Experience */
+.pdf-company-section {
+  margin-bottom: 2mm;
+  margin-top: 5mm;
+  page-break-inside: avoid;
+  margin-left: 3mm;
+  margin-right: 5mm;
+}
+
+.pdf-leadership-experience {
+  background: rgba(59, 130, 246, 0.05);
+  border: 0.5pt solid rgba(59, 130, 246, 0.1);
+  border-radius: 2mm;
+  padding: 2mm;
+  margin: 2mm 0;
+  page-break-inside: avoid;
+}
+
+.pdf-leadership-experience h4 {
+  font-size: 9pt;
+  font-weight: 600;
+  color: #3b82f6;
+  margin: 0 0 1mm 0;
+}
+
+.pdf-leadership-experience h4 .date-text {
+  font-size: 7pt;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.pdf-leadership-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pdf-leadership-achievements li {
+  position: relative;
+  padding-left: 3mm;
+  margin-bottom: 0.5mm;
+  font-size: 7pt;
+  color: #333;
+  line-height: 1.3;
+}
+
+.pdf-leadership-achievements li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-weight: bold;
+  font-size: 6pt;
+}
+
+.pdf-leadership-achievements li:last-child {
+  margin-bottom: 0;
+}
+
+.pdf-company-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1mm;
+}
+
+.pdf-company-info h3 {
+  font-size: 15pt;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+
+.pdf-company-info p {
+  font-size: 10pt;
+  margin: 0;
+  color: #555;
+  font-style: italic;
+  margin-top: 1mm;
+}
+
+.pdf-company-period {
+  font-size: 9pt;
+  color: #666;
+  white-space: nowrap;
+}
+
+.pdf-company-description {
+  font-size: 9pt;
+  margin: 0;
+  margin-left: 3mm;
+  margin-top: 1mm;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Project Cards */
+.pdf-project-card {
+  margin-bottom: 4mm;
+  margin-left: 5mm;
+  margin-right: 7mm;
+  padding: 3mm;
+  border: 0.5pt solid #ddd;
+  border-radius: 1mm;
+  page-break-inside: avoid;
+  background: #fafafa;
+}
+
+.pdf-project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2mm;
+}
+
+.pdf-project-title {
+  font-size: 11pt;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+  flex: 1;
+}
+
+.pdf-project-period {
+  font-size: 8pt;
+  color: #666;
+  white-space: nowrap;
+  margin-left: 3mm;
+}
+
+.pdf-project-tech {
+  font-size: 7pt;
+  margin-bottom: 2mm;
+  color: #555;
+  background: #f5f5f5;
+  padding: 1mm 2mm;
+  border-radius: 2mm;
+  border: 0.5pt solid #e0e0e0;
+  display: inline-block;
+}
+
+.pdf-project-tech strong {
+  font-weight: 600;
+  color: #000;
+}
+
+.pdf-project-description {
+  font-size: 8pt;
+  margin-bottom: 2mm;
+  color: #333;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+.pdf-project-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 2mm;
+}
+
+.pdf-project-achievements li {
+  position: relative;
+  padding-left: 4mm;
+  margin-bottom: 1mm;
+  font-size: 7pt;
+  color: #333;
+  line-height: 1.3;
+  text-align: justify;
+}
+
+.pdf-project-achievements li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: bold;
+}
+
+.pdf-project-achievements li:last-child {
+  margin-bottom: 0;
+}
+
+.pdf-project-achievements li strong {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Open Source */
+.pdf-opensource-card {
+  margin-left: 3mm;
+  margin-right: 5mm;
+  padding: 3mm;
+  border: 0.5pt solid #ddd;
+  border-radius: 2mm;
+  background: #fafafa;
+  page-break-inside: avoid;
+}
+
+.pdf-opensource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2mm;
+}
+
+.pdf-opensource-title {
+  font-size: 11pt;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+
+.pdf-opensource-links {
+  margin-top: 1mm;
+  margin-bottom: 2mm;
+  margin-left: 3mm;
+}
+
+.pdf-link-item {
+  font-size: 7pt;
+  color: #666;
+  margin-bottom: 0.5mm;
+  line-height: 1.2;
+}
+
+.pdf-opensource-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pdf-opensource-achievements li {
+  position: relative;
+  padding-left: 4mm;
+  margin-bottom: 1mm;
+  font-size: 8pt;
+  color: #333;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+.pdf-opensource-achievements li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #000;
+  font-weight: bold;
+}
+
+.pdf-opensource-achievements li:last-child {
+  margin-bottom: 0;
+}
+
+.pdf-opensource-achievements li strong {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Education */
+.pdf-education-timeline {
+  margin-top: 5mm;
+  margin-left: 3mm;
+  margin-right: 5mm;
+  margin-bottom: 0;
+}
+
+.pdf-education-item {
+  margin-bottom: 1.5mm;
+  padding: 1.5mm;
+  border-left: 2pt solid #333;
+  padding-left: 4mm;
+  page-break-inside: avoid;
+}
+
+.pdf-education-item:last-child {
+  margin-bottom: 0;
+}
+
+.pdf-education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1mm;
+}
+
+.pdf-education-title-group {
+  display: flex;
+  align-items: baseline;
+  gap: 2mm;
+}
+
+.pdf-education-item h4 {
+  font-size: 11pt;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+
+.pdf-education-info {
+  font-size: 9pt;
+  color: #666;
+}
+
+.pdf-education-period {
+  font-size: 8pt;
+  color: #666;
+  white-space: nowrap;
+}
+
+.pdf-education-description {
+  font-size: 9pt;
+  margin: 0;
+  color: #333;
+  font-style: italic;
+}
+
+/* Page break utilities */
+.page-break {
+  page-break-before: always;
+}
+
+.no-break {
+  page-break-inside: avoid;
+}
+
+/* Remove any web-specific elements for clean PDF */
+@media print {
+  .pdf-project-card:hover,
+  .pdf-opensource-card:hover,
+  .pdf-education-item:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure text is pure black for PDF */
+  * {
+    color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+}

@@ -42,10 +42,10 @@ hide_title: true
       INTRODUCE
     </h2>
     <p class="intro-text">
-      Python/Django, AWS 기반 3년차 서버 백엔드 엔지니어로, 15개의 다양한 도메인 프로젝트를 성공적으로 완료하며 복잡한 비즈니스 로직 구현과 확장 가능한 시스템 설계 경험을 쌓았습니다.
+      Python/Django, AWS 기반 3년차 서버 백엔드 엔지니어로, 백엔드 팀 리드 경험과 함께 15개의 다양한 도메인 프로젝트를 성공적으로 완료했습니다.
     </p>
     <p class="intro-text">
-      멀티벤더 커머스, NFC 연동과 암호화 처리, 실시간 AI 채팅 시스템 등 기술적 도전 과제들을 해결해왔습니다. 확장 가능한 API 설계를 고민하며, 검증된 아키텍처 패턴을 프로젝트에 적용하는 체계적 접근을 중요시합니다.
+      팀 리드로서 프로젝트 사전 기술 검토와 팀 관리 경험을 쌓았으며, 백엔드 개발자로서 복잡한 비즈니스 로직 구현과 확장 가능한 시스템 설계를 수행해왔습니다. 기술적 전문성과 함께 비즈니스 관점에서의 판단력을 갖춘 개발자로 성장하며, 팀 내 개발 생산성 향상을 위한 보일러플레이트 개선과 개발 프로세스 최적화에도 기여하고 있습니다.
     </p>
     <p class="intro-text">
       함께하면 결과를 만들어낼 수 있다는 확신을 주는 개발자가 되는 것을 목표로 하고 있습니다.
@@ -130,6 +130,14 @@ hide_title: true
         </div>
         <div class="company-period">2022.09 ~ 현재 <span id="work-duration"></span></div>
       </div>
+      <div class="leadership-experience">
+        <h4><i class="fas fa-users"></i> 백엔드 팀 리드 경험 <span class="date-text">(2024.12 ~ 현재)</span></h4>
+        <ul class="leadership-achievements">
+          <li>백엔드 팀 프로젝트 배정 및 진행 상황 관리</li>
+          <li><strong>프로젝트 수주 전 기술적 사전 검토 및 리스크 분석</strong>으로 성공적인 프로젝트 수주 지원</li>
+          <li>팀 내 개발 생산성 향상을 위한 <strong>보일러플레이트 최적화 및 개발 프로세스 개선</strong> 주도</li>
+        </ul>
+      </div>
       <p class="project-description">
         <strong>15개 이상의 다양한 도메인</strong> 웹/앱 서비스 백엔드 개발, 아키텍처 설계 및 서비스 기획 참여
       </p>
@@ -146,6 +154,7 @@ hide_title: true
         </h3>
         <div class="project-period">2024.09 ~ 2025.02 (5개월)</div>
       </div>
+      <div class="project-subtitle">패션 멀티벤더 커머스 플랫폼</div>
       <div class="project-tech">
         <span class="tech-tag">Django</span>
         <span class="tech-tag">DRF</span>
@@ -154,7 +163,7 @@ hide_title: true
         <span class="tech-tag">Celery</span>
       </div>
       <p class="project-description">
-        현재 운영 중인 패션 멀티벤더 커머스 플랫폼으로, <strong>복잡한 멀티벤더 비즈니스 로직 처리와 확장 가능한 시스템 아키텍처 설계</strong>에 중점을 두어 개발했습니다.
+        <strong>복잡한 멀티벤더 비즈니스 로직 처리와 확장 가능한 시스템 아키텍처</strong> 설계 및 개발
       </p>
       <ul class="project-achievements">
         <li>멀티벤더 커머스 플랫폼 750+ API 엔드포인트 단독 설계 및 개발</li>
@@ -176,6 +185,7 @@ hide_title: true
         </h3>
         <div class="project-period">2024.10 ~ 2024.11 (1개월)</div>
       </div>
+      <div class="project-subtitle">NFC 스마트 태그 관리 시스템</div>
       <div class="project-tech">
         <span class="tech-tag">Django</span>
         <span class="tech-tag">DRF</span>
@@ -184,7 +194,7 @@ hide_title: true
         <span class="tech-tag">NFC</span>
       </div>
       <p class="project-description">
-        NFC 하드웨어와 연동하는 스마트 태그 관리 시스템으로, <strong>암호화 데이터 처리와 Multi-tenant 보안 아키텍처 구현</strong>에 중점을 두어 개발했습니다.
+        <strong>암호화 데이터 처리와 Multi-tenant 보안 아키텍처</strong> 설계 및 개발
       </p>
       <ul class="project-achievements">
         <li><strong>NFC 암호화 데이터 복호화 및 무결성 검증 시스템 구현</strong>으로 변조 방지 및 보안성 확보</li>
@@ -205,6 +215,7 @@ hide_title: true
         </h3>
         <div class="project-period">2024.06 ~ 2024.09 (3개월)</div>
       </div>
+      <div class="project-subtitle">AI 실시간 대화 서비스</div>
       <div class="project-tech">
         <span class="tech-tag">Django</span>
         <span class="tech-tag">DRF</span>
@@ -215,7 +226,7 @@ hide_title: true
         <span class="tech-tag">DynamoDB</span>
       </div>
       <p class="project-description">
-        AI 캐릭터와의 실시간 대화 서비스로, <strong>AI 파운데이션 모델 기반 채팅 시스템과 실시간 WebSocket 통신 아키텍처 구현</strong>에 중점을 두어 개발했습니다.
+        <strong>AI 파운데이션 모델 기반 채팅 시스템과 실시간 WebSocket 통신 아키텍처</strong> 구축
       </p>
       <ul class="project-achievements">
         <li><strong>3단계 동적 프롬프트 엔지니어링 시스템</strong> 구축으로 AI 응답 일관성 및 안정성 확보</li>
@@ -237,6 +248,7 @@ hide_title: true
         </h3>
         <div class="project-period">2023.09 ~ 2024.04 (7개월)</div>
       </div>
+      <div class="project-subtitle">디지털 콘텐츠 유통 플랫폼</div>
       <div class="project-tech">
         <span class="tech-tag">Django</span>
         <span class="tech-tag">DRF</span>
@@ -246,7 +258,7 @@ hide_title: true
         <span class="tech-tag">Redis</span>
       </div>
       <p class="project-description">
-        디지털 콘텐츠 유통 플랫폼으로, <strong>TDD 적용 안정적 시스템 구축과 이중 암호화 개인정보 보호, 복합 결제 시스템 구현</strong>에 중점을 두어 개발했습니다.
+        <strong>TDD 방법론 적용과 이중 암호화 개인정보 보호, 복합 결제 시스템</strong> 개발
       </p>
       <ul class="project-achievements">
         <li><strong>TDD 방법론 적용</strong>으로 안정적인 웹소설 플랫폼 백엔드 시스템 구축</li>
@@ -327,6 +339,7 @@ hide_title: true
       </div>
     </div>
   </section>
+
 
 </div>
 
