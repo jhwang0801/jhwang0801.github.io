@@ -12,9 +12,9 @@ menu:
       - name: "Database"
         category: "database"
         icon: "fas fa-database"
-      # - name: "Node.js"
-      #   category: "nodejs"
-      #   icon: "fab fa-node-js"
+      - name: "SQL"
+        category: "sql"
+        icon: "fa-solid fa-code"
 
 default_tabs:
   - name: "Home"
