@@ -2,7 +2,7 @@
 title: "SQL 기초문법 정리 - SELECT & WHERE절"
 date: 2022-11-19
 categories: [sql]
-tags: [sql]
+tags: [sql, select, where]
 ---
 
 ## SELECT 문법 구조

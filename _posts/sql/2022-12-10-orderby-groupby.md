@@ -2,7 +2,7 @@
 title: "SQL 기초문법 정리 - ORDER BY & GROUP BY"
 date: 2022-12-10
 categories: [sql]
-tags: [sql]
+tags: [sql, orderby, groupby]
 ---
 
 ## ORDER BY - 데이터 정렬

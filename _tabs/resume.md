@@ -131,7 +131,7 @@ hide_title: true
         <div class="company-period">2022.09 ~ 현재 <span id="work-duration"></span></div>
       </div>
       <div class="leadership-experience">
-        <h4><i class="fas fa-users"></i> 백엔드 팀 리드 경험 <span class="date-text">(2024.12 ~ 현재)</span></h4>
+        <h4><i class="fas fa-users"></i> 백엔드 팀 리드 경험 <span class="date-text">(2025.02 ~ 현재)</span></h4>
         <ul class="leadership-achievements">
           <li>백엔드 팀 프로젝트 배정 및 진행 상황 관리</li>
           <li><strong>프로젝트 수주 전 기술적 사전 검토 및 리스크 분석</strong>으로 성공적인 프로젝트 수주 지원</li>
