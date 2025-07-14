@@ -1,6 +1,6 @@
 ---
 title: "복잡한 멀티셀러 주문 검증 엔진 설계를 고민해보다..."
-date: 2023-11-11
+date: 2025-03-01
 categories: [architecture]
 tags: [architecture, python, django]
 ---
