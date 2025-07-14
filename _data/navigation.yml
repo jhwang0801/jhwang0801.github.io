@@ -15,6 +15,9 @@ menu:
       - name: "SQL"
         category: "sql"
         icon: "fa-solid fa-code"
+      - name: "Architecture"
+        category: "architecture"
+        icon: "fa-solid fa-sitemap"
 
 default_tabs:
   - name: "Home"

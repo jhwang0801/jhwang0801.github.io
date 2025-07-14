@@ -25,6 +25,7 @@
           'sql',
           'articles',
           'database',
+          'architecture',
         ];
 
         if (techCategories.includes(currentCategory)) {

@@ -18,6 +18,8 @@ layout: page
         <i class="fas fa-database fa-xl text-warning"></i>
         {% elsif page.title == 'sql' %}
         <i class="fa-solid fa-code fa-xl text-dark"></i>
+        {% elsif page.title == 'architecture' %}
+        <i class="fa-solid fa-sitemap fa-xl text-primary"></i>
         {% else %}
         <i class="far fa-folder-open fa-xl text-muted"></i>
         {% endif %}
@@ -51,6 +53,11 @@ layout: page
       {% elsif page.title == 'sql' %}
       <p class="mb-0">
         <i class="fas fa-info-circle me-2"></i>SQL 과 관련된 내용들을 다룹니다.
+      </p>
+      {% elsif page.title == 'architecture' %}
+      <p class="mb-0">
+        <i class="fas fa-info-circle me-2"></i>더 나은 Backend Architecture를
+        위하여 고민한 흔적들을 남깁니다.
       </p>
       {% else %}
       <p class="mb-0">
