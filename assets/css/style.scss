@@ -22,3 +22,15 @@
 @import 'layout/topbar';
 @import 'layout/footer';
 @import 'layout/panel';
+
+/* Word break settings for Korean text */
+.content, .post-content, main {
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+/* Apply to post titles and descriptions */
+.post-desc, .post-title, h1, h2, h3, h4, h5, h6 {
+  word-break: keep-all;
+  word-wrap: break-word;
+}
